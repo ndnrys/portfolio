@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>あんしん Widget | Web機能設計ポートフォリオ</title>
+    <style>
+        /* 訪問者がプロフェッショナルな印象を受けるための最小限のCSS */
+        body { 
+            font-family: 'Hiragino Kaku Gothic ProN', sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            line-height: 1.6; 
+            padding: 20px; 
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header { 
+            border-bottom: 2px solid #0056b3; 
+            padding-bottom: 15px; 
+            margin-bottom: 30px; 
+        }
+        h1 { 
+            font-size: 28px; 
+            color: #0056b3; 
+        }
+        .intro p { 
+            font-size: 1.1em; 
+            margin-bottom: 25px; 
+        }
+        .demo-list { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .demo-list li { 
+            background-color: #ffffff; 
+            margin-bottom: 15px; 
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .demo-list a { 
+            font-size: 18px; 
+            color: #007bff; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .demo-list a:hover { 
+            text-decoration: underline; 
+            color: #0056b3;
+        }
+        .note {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>あんしん Widget | Web機能設計ポートフォリオ</h1>
+    </header>
+
+    <div class="intro">
+        <p>大規模ECサイトでの開発経験に基づいた、安定稼働と成果に特化した組み込み機能（Widget）のデモです。</p>
+        <p>複雑なフレームワークを使用せず、軽量なVanilla JSで構築しています。設置サポート付き（Standardプラン以上）で安心です。</p>
+    </div>
+
+    <h2>デモ一覧</h2>
+    <ul class="demo-list">
+        <li>
+            <a href="quize-demo/base.html">【リード獲得】多段階診断クイズ</a>
+            <p>顧客のニーズをヒアリングし、最適なサービスプランへ誘導する機能です。（CVR向上特化）</p>
+        </li>
+        <li>
+            <a href="simulator-demo/base.html">【CVR向上】即時見積もりシミュレーター</a>
+            <p>複雑なオプション選択に対応。顧客が離脱する前におおよその費用を提示し、問い合わせへ繋げます。</p>
+        </li>
+    </ul>
+
+    <div class="note">
+        ※各デモは全て「設定ファイル分離型」で構築されており、カスタマイズ性が極めて高くなっています。
+    </div>
+</body>
+</html>
