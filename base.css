@@ -1,32 +1,51 @@
-/* style.css の例 */
-/* デモページに準拠したフォントと基本設定 */
-body {
-  font-family: 'メイリオ', Meiryo, sans-serif; /* プロフェッショナルなフォント */
-  line-height: 1.6;
-  color: #333; /* 濃いグレーで視認性確保 */
-  background-color: #f4f4f4; /* ごく薄いグレーで背景に安定感を */
+/* 訪問者がプロフェッショナルな印象を受けるための最小限のCSS */
+body { 
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif; 
+  max-width: 800px; 
+  margin: 40px auto; 
+  line-height: 1.6; 
+  padding: 20px; 
+  background-color: #f8f8f8;
+  color: #333;
 }
-
-/* デモページの区切り線やボックスのトーン */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+header { 
+  border-bottom: 2px solid #0056b3; 
+  padding-bottom: 15px; 
+  margin-bottom: 30px; 
 }
-
-/* ボタンのスタイル（デモで使用されている色） */
-.btn-primary {
-  background-color: #007bff; /* 青系（信頼感） */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+h1 { 
+  font-size: 28px; 
+  color: #0056b3; 
 }
-
-/* 見出しのスタイル */
-h2 {
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
-  margin-top: 25px;
+.intro p { 
+  font-size: 1.1em; 
+  margin-bottom: 25px; 
+}
+.demo-list { 
+  list-style: none; 
+  padding: 0; 
+}
+.demo-list li { 
+  background-color: #ffffff; 
+  margin-bottom: 15px; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.demo-list a { 
+  font-size: 18px; 
+  color: #007bff; 
+  text-decoration: none; 
+  font-weight: bold;
+}
+.demo-list a:hover { 
+  text-decoration: underline; 
+  color: #0056b3;
+}
+.note {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #666;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
 }
