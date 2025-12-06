@@ -1,0 +1,136 @@
+/* 基本コンテナのスタイル */
+#ansinWidget {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* タイトル */
+#ansinWidget .ansinWidget-title {
+    font-size: 1.25rem; /* 約20px */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem; /* 約24px */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* 項目全体（ベース/オプション） */
+#ansinWidget .ansinWidget-base-inner,
+#ansinWidget .ansinWidget-option-inner {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+/* 項目ラベル（例: 基本サービス項目（必須）） */
+#ansinWidget .ansinWidget-base-label,
+#ansinWidget .ansinWidget-option-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #3b82f6;
+    padding-left: 0.5rem;
+}
+
+/* ラジオボタン・チェックボックスのレイアウトとラベル */
+#ansinWidget .ansinWidget-radio,
+#ansinWidget .ansinWidget-checkbox {
+    margin-right: 0.5rem;
+}
+
+#ansinWidget .ansinWidget-base-name,
+#ansinWidget .ansinWidget-option-name {
+    display: block; /* 選択肢を縦に並べる */
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+/* プルダウン */
+#ansinWidget .ansinWidget-select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 数値入力 */
+#ansinWidget .ansinWidget-number {
+    width: 80px;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+    margin-left: 1rem;
+}
+
+/* 合計金額エリア */
+#ansinWidget .ansinWidget-total {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #d1d5db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+#ansinWidget .ansinWidget-total-txt {
+    font-weight: 600; 
+    color: #333;
+}
+
+#ansinWidget .ansinWidget-total-price {
+    font-weight: bold;
+    color: #e53e3e; /* 赤系の目立つ色 */
+    font-size: 1.5rem;
+}
+
+/* テキストエリア */
+#ansinWidget .ansinWidget-txt {
+    font-size: 0.875rem;
+    color: #777;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* CTAボタン */
+#ansinWidget .ansinWidget-cta {
+    margin-top: 1.5rem;
+}
+
+#ansinWidget .ansinWidget-cta-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    background-color: #3b82f6; /* 青 */
+    color: white;
+    border-radius: 0.5rem; 
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+#ansinWidget .ansinWidget-cta-link:hover {
+    opacity: 0.8;
+}
+
+/* エラー表示 */
+#ansinWidget .ansinWidget-error {
+    color: #ef4444; /* 赤 */
+    font-size: 0.8rem; 
+    margin-bottom: 0.5rem; 
+    font-weight: normal;
+}
+
+/* エラー時のみアクティブになる枠線 */
+#ansinWidget .ansinWidget-error-active {
+    border-color: #ef4444;
+}

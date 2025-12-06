@@ -33,9 +33,13 @@ const ansinWidgetConfig = {
     option: [
         {
         label: "基本サービス項目チェックボックス",
-        required: 0,
+        required: 1,
         type: 1, // 0: radio, 1: checkbox, 2: pulldown, 3: number
         items: [
+            {
+                name: "追加オプションA：不要 (+0円)",
+                price: 0
+            },
             {
                 name: "追加オプションA：データ連携機能 (+15,000円)",
                 price: 15000
