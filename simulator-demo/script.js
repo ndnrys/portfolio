@@ -208,11 +208,8 @@
     (txt, idx) => `<p class="ansinWidget-txt ansinWidget-txt_${idx}">${txt}</p>`
   );
   // CTAのURLが相対パスでも動作するように修正
-  const ctaUrl = ansinWidgetConfig.cta.url.startsWith("http")
-    ? ansinWidgetConfig.cta.url
-    : `http://${ansinWidgetConfig.cta.url}`;
-  const cta = ansinWidgetConfig.cta.use
-    ? `<div class="ansinWidget-cta"><a href="${ctaUrl}" class="ansinWidget-cta-link">${ansinWidgetConfig.cta.text}</a></div>`
+  const ctaUrl = ansinWidgetConfig.cta.use
+    ? `<div class="ansinWidget-cta"><a href="${ansinWidgetConfig.cta.url}" class="ansinWidget-cta-link">${ansinWidgetConfig.cta.text}</a></div>`
     : "";
   const base = `<div class="ansinWidget-base">${ansinWidgetUtil.getItemsHTML(
     "base",
