@@ -2,20 +2,21 @@
 const ansinWidgetConfig = {
     info: {
         close: 0,
-        title: "タイトル",
+        title: "Webサイト制作/システム開発 費用シミュレーション",
         texts: [
-            "ここはテキスト1です",
-            "ここはテキスト2です",
-            "ここはテキスト3です",
+            "お客様のサイトになじむデザインを設定いたします",
+            "このメッセージは各行お好きな位置に移動することができます",
+            "他項目の表示順、表示位置（この項目は横並びにして等）は、ご調整いたします",
+            "※複雑なカスタマイズは有料オプションで承ります",
         ],
     },
     cta: {
         use: 1,
         text: "お見積もりはこちら",
-        url: "google.com"
+        url: "#"
     },
     base: {
-        label: "基本サービス項目（必須）",
+        label: "基本サービス項目",
         required: 1,
         type: 0, // 0: radio, 1: checkbox, 2: pulldown
         items: [
@@ -32,7 +33,7 @@ const ansinWidgetConfig = {
     option: [
         {
         label: "基本サービス項目チェックボックス",
-        required: 1,
+        required: 0,
         type: 1, // 0: radio, 1: checkbox, 2: pulldown, 3: number
         items: [
             {
@@ -47,7 +48,7 @@ const ansinWidgetConfig = {
         },
         {
             label: "基本サービス項目プルダウン",
-            required: 1,
+            required: 0,
             type: 2, // 0: radio, 1: checkbox, 2: pulldown, 3: number
             items: [
                 {
