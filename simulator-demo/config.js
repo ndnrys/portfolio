@@ -16,6 +16,7 @@ const ansinWidgetConfig = {
     },
     base: {
         label: "基本サービス項目（必須）",
+        required: 1,
         type: 0, // 0: radio, 1: checkbox, 2: pulldown
         items: [
             {
@@ -30,7 +31,8 @@ const ansinWidgetConfig = {
     },
     option: [
         {
-        label: "基本サービス項目チェックボックス（必須）",
+        label: "基本サービス項目チェックボックス",
+        required: 1,
         type: 1, // 0: radio, 1: checkbox, 2: pulldown, 3: number
         items: [
             {
@@ -44,7 +46,8 @@ const ansinWidgetConfig = {
         ]
         },
         {
-            label: "基本サービス項目プルダウン（必須）",
+            label: "基本サービス項目プルダウン",
+            required: 1,
             type: 2, // 0: radio, 1: checkbox, 2: pulldown, 3: number
             items: [
                 {
@@ -58,7 +61,8 @@ const ansinWidgetConfig = {
             ]
         },
         {
-            label: "基本サービス項目テキスト（必須）",
+            label: "基本サービス項目テキスト",
+            required: 1,
             type: 3, // 0: radio, 1: checkbox, 2: pulldown, 3: number
             items: [
                 {
