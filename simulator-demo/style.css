@@ -1,136 +1,205 @@
+/* ========================================================= */
+/* --- ansinWidget の基本CSS --- */
+/* ========================================================= */
+
 /* 基本コンテナのスタイル */
 #ansinWidget {
-    font-family: Arial, sans-serif;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 /* タイトル */
 #ansinWidget .ansinWidget-title {
-    font-size: 1.25rem; /* 約20px */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1.5rem; /* 約24px */
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #eee;
+  font-size: 1.25rem; /* 約20px */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem; /* 約24px */
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
 }
 
 /* 項目全体（ベース/オプション） */
+/* === Gridをやめ、Flexboxによる縦並び(Column)に変更 === */
 #ansinWidget .ansinWidget-base-inner,
 #ansinWidget .ansinWidget-option-inner {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
+  display: flex;
+  flex-direction: column; /* 縦並びにする */
+  gap: 0.25rem; /* 縦の隙間のみ維持 */
+  
+  /* 既存のスタイルを維持 */
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
 }
+/* ======================================================= */
+
 
 /* 項目ラベル（例: 基本サービス項目（必須）） */
 #ansinWidget .ansinWidget-base-label,
 #ansinWidget .ansinWidget-option-label {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 0.75rem;
-    border-left: 4px solid #3b82f6;
-    padding-left: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.25rem; /* Flexのgapとは別にマージンで調整 */
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.5rem;
+  /* --- ★共通: position: relative; を設定し、::afterの基準点とする★ --- */
+  position: relative;
 }
 
-/* ラジオボタン・チェックボックスのレイアウトとラベル */
-#ansinWidget .ansinWidget-radio,
-#ansinWidget .ansinWidget-checkbox {
-    margin-right: 0.5rem;
+/* === ★追加: 必須項目(data-required="1")のラベルに「必須」マークを表示するCSS (ベース項目用)★ === */
+#ansinWidget .ansinWidget-base-inner[data-required="1"] .ansinWidget-base-label::after,
+/* === ★既存: 必須項目(data-required="1")のラベルに「必須」マークを表示するCSS (オプション項目用)★ === */
+#ansinWidget .ansinWidget-option-inner[data-required="1"] .ansinWidget-option-label::after {
+  content: "必須"; /* 表示するテキスト */
+  position: absolute;
+  top: 50%; /* 縦方向の中央に配置 */
+  right: 0; /* 右端に配置 */
+  transform: translateY(-50%); /* 縦方向の中央揃えを補正 */
+  
+  /* スタイリング */
+  font-size: 0.7rem;
+  font-weight: normal;
+  background-color: #ef4444; /* 赤い背景 */
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1; /* 行の高さを1にして、ボックスの高さをテキストに合わせる */
+}
+/* ========================================================================= */
+
+
+/* Gridレイアウトで使っていたエリア名は削除します */
+
+/* ======================================================= */
+
+
+/* ラジオボタン・チェックボックスの入力要素とラベルを囲むグループ (古いセレクタ) */
+#ansinWidget .ansinWidget-input-group {
+  display: block; 
+  margin-bottom: 0; 
+  padding-top: 0; 
 }
 
+/* 選択肢の新しいラッパー要素 (Flexの子要素としてそのまま使用) */
+#ansinWidget .ansinWidget-question {
+  display: block; /* 縦並びを維持 */
+  margin-bottom: 0;
+  padding-top: 0; 
+}
+
+
+/* ラベル自体をインライン要素のまま維持 */
 #ansinWidget .ansinWidget-base-name,
 #ansinWidget .ansinWidget-option-name {
-    display: block; /* 選択肢を縦に並べる */
-    margin-bottom: 0.5rem;
-    cursor: pointer;
+  display: inline;
+  margin-bottom: 0;
+  cursor: pointer;
+  /* ラベル側で隙間を微調整 */
+  margin-left: 0.1rem; 
+}
+
+/* ラジオボタン・チェックボックスのレイアウト */
+#ansinWidget .ansinWidget-radio,
+#ansinWidget .ansinWidget-checkbox {
+  /* マージンを完全に削除し、ラベル側に隙間制御を委ねる */
+  margin-right: 0; 
+  
+  width: 1em;          /* サイズを標準的なフォントサイズに合わせる */
+  height: 1em;         /* サイズを標準的なフォントサイズに合わせる */
+  vertical-align: middle; /* ラベルとチェックボックス/ラジオボタンの縦位置を揃える */
 }
 
 /* プルダウン */
 #ansinWidget .ansinWidget-select {
-    display: block;
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Flexの子要素として全幅を占める (デフォルト挙動) */
 }
 
 /* 数値入力 */
+/* 数値入力のラッパーには特にスタイルは不要 */
 #ansinWidget .ansinWidget-number {
-    width: 80px;
-    padding: 0.4rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: right;
-    margin-left: 1rem;
+  width: 80px;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: right;
+  margin-left: 1rem;
 }
 
 /* 合計金額エリア */
 #ansinWidget .ansinWidget-total {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px dashed #d1d5db;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #d1d5db;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 #ansinWidget .ansinWidget-total-txt {
-    font-weight: 600; 
-    color: #333;
+  font-weight: 600; 
+  color: #333;
 }
 
 #ansinWidget .ansinWidget-total-price {
-    font-weight: bold;
-    color: #e53e3e; /* 赤系の目立つ色 */
-    font-size: 1.5rem;
+  font-weight: bold;
+  color: #e53e3e; /* 赤系の目立つ色 */
+  font-size: 1.5rem;
 }
 
 /* テキストエリア */
 #ansinWidget .ansinWidget-txt {
-    font-size: 0.875rem;
-    color: #777;
-    margin-top: 0.5rem;
-    line-height: 1.4;
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 0;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
 }
 
 /* CTAボタン */
 #ansinWidget .ansinWidget-cta {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 #ansinWidget .ansinWidget-cta-link {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    background-color: #3b82f6; /* 青 */
-    color: white;
-    border-radius: 0.5rem; 
-    text-decoration: none;
-    transition: opacity 0.2s;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  background-color: #3b82f6; /* 青 */
+  color: white;
+  border-radius: 0.5rem; 
+  text-decoration: none;
+  transition: opacity 0.2s;
 }
 #ansinWidget .ansinWidget-cta-link:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* エラー表示 */
+/* エラーとラベルはFlexboxで縦並びになります */
 #ansinWidget .ansinWidget-error {
-    color: #ef4444; /* 赤 */
-    font-size: 0.8rem; 
-    margin-bottom: 0.5rem; 
-    font-weight: normal;
+  color: #ef4444; /* 赤 */
+  font-size: 0.8rem; 
+  font-weight: normal;
+  margin-bottom: 0; /* Flexのgapで制御 */
 }
 
 /* エラー時のみアクティブになる枠線 */
 #ansinWidget .ansinWidget-error-active {
-    border-color: #ef4444;
+  border-color: #ef4444;
 }

@@ -67,7 +67,7 @@ const ansinWidgetConfig = {
         },
         {
             label: "基本サービス項目テキスト",
-            required: 1,
+            required: 0,
             type: 3, // 0: radio, 1: checkbox, 2: pulldown, 3: number
             items: [
                 {
