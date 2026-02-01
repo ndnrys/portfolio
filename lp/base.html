@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T5Q9JPDT');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <title>エラー発生用ページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5Q9JPDT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="card">
+        <h1>Zelos エラー送信テスト</h1>
+        
+        <button class="btn-runtime" onclick="triggerRuntimeError()">
+            通常のエラーを発生させる
+        </button>
+
+        <button class="btn-promise" onclick="triggerPromiseError()">
+            Promiseエラーを発生させる
+        </button>
+
+        <p>ボタンを押した後、コンソールおよびGA4のリアルタイムレポートを確認してください。</p>
+    </div>
+
+    <script>
+        function triggerRuntimeError() {
+            // 意図的に未定義の関数を呼び出す
+            callUndefinedFunctionZelos();
+        }
+
+        function triggerPromiseError() {
+            // 意図的にPromise内でrejectし、catchしない
+            new Promise((resolve, reject) => {
+                throw new Error("意図的な非同期エラーです");
+            });
+        }
+    </script>
+
+</body>
+</html>
